@@ -2,6 +2,10 @@ import mongoose from "../mongooes.connection.js";
 
 
 const otpSchema=new mongoose.Schema({
+    country:{
+        type:String,
+        require:true,
+    },
     phone:{
         type:Number,
         require:true,

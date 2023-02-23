@@ -9,7 +9,7 @@ function AddMinutesToDate(date, minutes) {
 
 const sendOTP=async (req,res)=>{
 
-    const {phone}=req.body;
+    const {country,phone}=req.body;
 
     if(!phone){
         const response={"success":false,"Details":"Phone Number not provided"}
@@ -26,6 +26,7 @@ const sendOTP=async (req,res)=>{
     try {
         
         const OTPData=new OTP({
+            country:country,
             phone:phone,
             otp:otp,
             expriration_time:expriration_time
@@ -80,7 +81,13 @@ const verifyOTP=(req,res)=>{
             return res.send("OTP VERIFY")
             
         }
-        res.send("OTP NOT VERIFY")
+
+        const data={
+            "success": true,
+            "message": "otp verify successfully",
+         }
+
+        res.send(data)
     })
 
 
