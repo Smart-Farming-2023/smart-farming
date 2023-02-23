@@ -35,7 +35,7 @@ const sendOTP=async (req,res)=>{
         console.log(result);
 
     } catch (error) {
-        console.log(err)
+        console.log(error)
         res.send(error)
     }
 
