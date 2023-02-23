@@ -77,16 +77,20 @@ const verifyOTP=(req,res)=>{
                 return res.send("OTP Expired")
             }
         
+            const data={
+                "success": true,
+                "message": "otp verify successfully",
+             }
 
-            return res.send("OTP VERIFY")
+            return res.send(data)
             
         }
 
         const data={
-            "success": true,
-            "message": "otp verify successfully",
+            "success": false,
+            "message": "otp not verify",
          }
-
+        
         res.send(data)
     })
 
