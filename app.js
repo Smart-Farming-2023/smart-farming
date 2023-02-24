@@ -1,6 +1,7 @@
 import express from 'express';
 import authRoute from './routes/auth.routes.js';
 import bodyParser from 'body-parser';
+import userRoute from './routes/user.routes.js';
 
 const app=express();
 const PORT=process.env.PORT || 8000;
@@ -15,6 +16,7 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/auth",authRoute);
+app.use("/user",userRoute);
 
 
 app.listen(PORT,()=>{

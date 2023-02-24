@@ -21,7 +21,10 @@ const sendOTP=async (req,res)=>{
     const now=new Date();
     const expriration_time=AddMinutesToDate(now,5);
 
-    OTP.deleteMany({'phone':phone});
+    OTP.deleteMany({'phone':phone}).then(function(){})
+    .catch(function(err){
+        console.log(err);
+    });
 
     try {
         
@@ -80,6 +83,10 @@ const verifyOTP=(req,res)=>{
             const data={
                 "success": true,
                 "message": "otp verify successfully",
+                "data":{
+                    "country":body.country,
+                    "phone":body.phone,
+                }
              }
 
             return res.send(data)
