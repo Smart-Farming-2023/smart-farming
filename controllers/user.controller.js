@@ -14,7 +14,7 @@ const createUser=async (req,res)=>{
 
     User.find({phone:body.phone},async function (error,docs){
         if(docs[0]!=null){
-            return res.send("User already exist")
+            return res.send("User already exists.")
         }else{
             if(emailValidation.test(body.email)){
         
