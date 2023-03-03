@@ -23,6 +23,12 @@ const createUser=async (req,res)=>{
                         console.log(body);
                         const result= await userData.save();
                 
+                        const data={
+                            "success": true,
+                            "message": "User create successfully",
+                            "data": result
+                         }
+
                         res.send(result)
                     }catch(err){
                         console.log(err)
