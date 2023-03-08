@@ -8,7 +8,10 @@ const createUser=async (req,res)=>{
 
     User.find({phone:body.phone},async function (error,docs){
         if(docs[0]!=null){
-            return res.send("User already exists.")
+            return res.send({
+                "success": false,
+                "message": "User already exist.",
+             })
         }else{
             if(emailValidation.test(body.email)){
         
@@ -29,14 +32,21 @@ const createUser=async (req,res)=>{
                             "data": result
                          }
 
-                        res.send(result)
+                        res.send(data)
                     }catch(err){
                         console.log(err)
-                        res.send(err)
+                        res.send({
+                            "success": false,
+                            "message": "Something went to wrong.",
+                            "err":err
+                         })
                     }
             
             }else{
-                res.send("Invalid Format")
+                res.send({
+                    "success": false,
+                    "message": "Email is not valid.",
+                 })
             }
         }
     })
