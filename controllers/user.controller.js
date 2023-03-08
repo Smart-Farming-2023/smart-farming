@@ -53,4 +53,24 @@ const createUser=async (req,res)=>{
 
 }
 
-export {createUser}
+const isUserExists=async (req,res)=>{
+
+    const body=req.body;
+
+    User.find({phone:body.phone},async function (error,docs){
+        if(docs[0]!=null){
+            return res.send({
+                "success": true,
+                "message": "User is exist.",
+                "user":docs[0]
+             })
+        }else{
+            return res.send({
+                "success": false,
+                "message": "User not exist.",
+             })
+        }
+    })
+}
+
+export {createUser,isUserExists}
