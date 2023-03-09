@@ -6,6 +6,11 @@ import screenRoute from './routes/screen.routes.js';
 import infoCatRoute from './routes/info.cat.routes.js';
 import contactRoute from './routes/contact.routes.js';
 import weblinkRoute from './routes/weblink.routes.js';
+import plantRoute from './routes/plant.routes.js';
+import landRoute from './routes/land.routes.js';
+import medicineRoute from './routes/medicine.routes.js';
+import equipmentRoute from './routes/equipment.routes.js';
+import fertillizerRoute from './routes/fertillizer.routes.js';
 
 const app=express();
 const PORT=process.env.PORT || 8000;
@@ -25,6 +30,11 @@ app.use("/screen",screenRoute);
 app.use("/infoCat",infoCatRoute);
 app.use("/contact",contactRoute);
 app.use("/webLink",weblinkRoute);
+app.use("/plant",plantRoute);
+app.use("/land",landRoute);
+app.use("/medicine",medicineRoute);
+app.use("/equipment",equipmentRoute);
+app.use("/fertillizer",fertillizerRoute);
 
 
 app.listen(PORT,()=>{
