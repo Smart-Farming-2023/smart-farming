@@ -1,4 +1,4 @@
-import Fertilizer from "../models/fertillizer.model.js";
+import Fertilizer from "../models/fertilizer.model.js";
 
 const createFertilizer=async (req,res)=>{
 

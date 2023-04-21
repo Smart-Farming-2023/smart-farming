@@ -11,6 +11,10 @@ import landRoute from './routes/land.routes.js';
 import medicineRoute from './routes/medicine.routes.js';
 import equipmentRoute from './routes/equipment.routes.js';
 import fertillizerRoute from './routes/fertillizer.routes.js';
+import shopRoute from './routes/shopRoutes/shop.routes.js';
+import shopMedicineRoute from './routes/shopRoutes/shop.medicine.routes.js';
+import shopToolsRoute from './routes/shopRoutes/shop.tools.routes.js';
+import shopPlantRoute from './routes/shopRoutes/shop.plant.routes.js';
 
 const app=express();
 const PORT=process.env.PORT || 8000;
@@ -35,6 +39,10 @@ app.use("/land",landRoute);
 app.use("/medicine",medicineRoute);
 app.use("/equipment",equipmentRoute);
 app.use("/fertillizer",fertillizerRoute);
+app.use("/shop",shopRoute);
+app.use("/shopMedicine",shopMedicineRoute);
+app.use("/shopTools",shopToolsRoute);
+app.use("/shopPlant",shopPlantRoute);
 
 
 app.listen(PORT,()=>{
