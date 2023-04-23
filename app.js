@@ -15,6 +15,7 @@ import shopRoute from './routes/shopRoutes/shop.routes.js';
 import shopMedicineRoute from './routes/shopRoutes/shop.medicine.routes.js';
 import shopToolsRoute from './routes/shopRoutes/shop.tools.routes.js';
 import shopPlantRoute from './routes/shopRoutes/shop.plant.routes.js';
+import govSchemeRoute from './routes/gov.scheme.routes.js';
 
 const app=express();
 const PORT=process.env.PORT || 8000;
@@ -43,6 +44,7 @@ app.use("/shop",shopRoute);
 app.use("/shopMedicine",shopMedicineRoute);
 app.use("/shopTools",shopToolsRoute);
 app.use("/shopPlant",shopPlantRoute);
+app.use("/govScheme",govSchemeRoute);
 
 
 app.listen(PORT,()=>{
