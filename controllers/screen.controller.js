@@ -23,7 +23,7 @@ const getHome=async (req,res)=>{
                 "message": "User not valid",})
         }else{
             InfoCat.find(function(err,info){
-                console.log(info)
+                
                 if(info[0]==null){
                     return res.send({
                         "success": false,
@@ -55,11 +55,11 @@ const getHome=async (req,res)=>{
                                         }
                                     )
                                 }
-                            })
+                            }).select('-createdAt -updatedAt -__v')
                         }
-                    })
+                    }).select('-createdAt -updatedAt -__v')
                 }
-            })
+            }).select('-createdAt -updatedAt -__v')
         }
     });
 
@@ -81,7 +81,6 @@ const getShop=async (req,res)=>{
                 "message": "User not valid",})
         }else{
             Shop.find(function(err,shop){
-                console.log(shop)
                 if(shop[0]==null){
                     return res.send({
                         "success": false,
@@ -120,14 +119,14 @@ const getShop=async (req,res)=>{
                                                 }
                                             )
                                         }
-                                    }).limit(8)
+                                    }).limit(8).select('-createdAt -updatedAt -__v')
                                     
                                 }
-                            }).limit(8)
+                            }).limit(8).select('-createdAt -updatedAt -__v')
                         }
-                    }).limit(8)
+                    }).limit(8).select('-createdAt -updatedAt -__v')
                 }
-            }).limit(5)
+            }).limit(5).select('-createdAt -updatedAt -__v')
         }
     });
 }

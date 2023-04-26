@@ -9,7 +9,7 @@ const createShopMedicine=async (req,res)=>{
             image:body.image,
             name:body.name,
             price:body.price,
-            use:body.price,
+            use:body.use,
         })   
 
         console.log(body);
